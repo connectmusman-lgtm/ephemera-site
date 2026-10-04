@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ephemera: full site mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F4FC;--ink:#1A1433;--soft:#5B5478;--card:#fff;--line:#DDD8EE;--blue:#2340D9;--orange:#FF6B1F;--violet:#6B46C1;--on:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151128;--ink:#F1EEFA;--soft:#B3AACF;--card:#1F1A38;--line:#352E57;--blue:#7C93FF;--orange:#FF8A4C;--violet:#B79BFF;--on:#151128}}
+:root[data-theme="dark"]{--bg:#151128;--ink:#F1EEFA;--soft:#B3AACF;--card:#1F1A38;--line:#352E57;--blue:#7C93FF;--orange:#FF8A4C;--violet:#B79BFF;--on:#151128}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 "Source Serif 4",Georgia,serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.sans{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif}
+header{padding:28px 0 0}
+.mark{font:800 clamp(52px,11vw,112px)/.9 "Bricolage Grotesque",Arial,sans-serif;letter-spacing:-.04em;margin:0;color:var(--blue)}
+.tag{margin:6px 0 0;color:var(--soft);font-style:italic}
+nav{display:flex;gap:6px 22px;flex-wrap:wrap;margin:22px 0 0;padding:12px 0;border-top:3px solid var(--ink);border-bottom:1px solid var(--line);font:500 16px "Bricolage Grotesque",Arial,sans-serif}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover,nav a[aria-current]{color:var(--orange)}
+.hero{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;padding:48px 0;align-items:start}
+.hero h2{font:800 clamp(34px,5vw,54px)/1.02 "Bricolage Grotesque",Arial,sans-serif;letter-spacing:-.03em;margin:0 0 16px}
+.hero p{margin:0 0 14px;max-width:44ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+button.chip{font:500 15px "Bricolage Grotesque",Arial,sans-serif;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer}
+button.chip[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:#1A1433}
+button.chip:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.piece{background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:26px;box-shadow:8px 8px 0 var(--blue)}
+.piece h3{font:800 28px/1.1 "Bricolage Grotesque",Arial,sans-serif;margin:0 0 4px;letter-spacing:-.02em}
+.meta{color:var(--soft);margin:0 0 18px;font-size:16px}
+.stats{display:flex;gap:28px;margin-bottom:22px}
+.stats b{display:block;font:800 40px/1 "Bricolage Grotesque",Arial,sans-serif;color:var(--violet)}
+.stats span{font-size:14px;color:var(--soft)}
+.track{position:relative;height:56px;border-bottom:2px solid var(--ink);margin:0 4px}
+.dot{position:absolute;bottom:-7px;width:14px;height:14px;border-radius:50%;background:var(--orange);border:2px solid var(--ink);transform:translateX(-50%)}
+.dot i{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font:500 12px "Bricolage Grotesque",Arial,sans-serif;white-space:nowrap;font-style:normal;color:var(--ink)}
+.yrs{display:flex;justify-content:space-between;font:500 12px "Bricolage Grotesque",Arial,sans-serif;color:var(--soft);margin:12px 4px 0}
+.note{margin:16px 0 0;font-size:15px;color:var(--soft)}
+section.block{padding:12px 0 44px}
+.head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:22px}
+.head h2{font:800 30px/1 "Bricolage Grotesque",Arial,sans-serif;margin:0;letter-spacing:-.02em}
+.head a{color:var(--blue);font:500 15px "Bricolage Grotesque",Arial,sans-serif}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.post{text-decoration:none;color:inherit}
+.ph{aspect-ratio:3/4;border-radius:4px;display:flex;align-items:flex-end;padding:10px;font:500 12px "Bricolage Grotesque",Arial,sans-serif;color:#fff}
+.ph{position:relative;overflow:hidden}.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb{float:right;width:84px;height:108px;object-fit:cover;border-radius:4px;border:2px solid var(--ink);margin:0 0 8px 14px}
+.post h3{font:800 19px/1.15 "Bricolage Grotesque",Arial,sans-serif;margin:12px 0 4px;letter-spacing:-.01em}
+.post:hover h3{color:var(--orange)}
+.post p{margin:0;font-size:15px;color:var(--soft)}
+.browse{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.browse div{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px}
+.browse h3{font:800 20px "Bricolage Grotesque",Arial,sans-serif;margin:0 0 10px}
+.browse span{display:inline-block;margin:0 6px 6px 0;padding:3px 12px;border:1px solid var(--line);border-radius:999px;font-size:15px}
+.swap{background:var(--blue);color:#fff;border-radius:6px;padding:34px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .swap{color:#151128}}
+.swap h2{font:800 32px/1.05 "Bricolage Grotesque",Arial,sans-serif;margin:0 0 6px}
+.swap p{margin:0;max-width:52ch}
+.swap a{background:var(--orange);color:#1A1433;font:800 16px "Bricolage Grotesque",Arial,sans-serif;padding:12px 22px;border-radius:999px;text-decoration:none}
+footer{border-top:3px solid var(--ink);margin-top:48px;padding:24px 0 40px;font-size:15px;color:var(--soft)}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding:32px 0}.grid{grid-template-columns:repeat(2,1fr)}.browse{grid-template-columns:1fr}}
+@media(max-width:480px){.piece{padding:18px}.stats{gap:18px}.stats b{font-size:32px}}
+
+[hidden]{display:none!important}
+.lead{max-width:58ch;margin:0 0 22px;color:var(--soft)}
+.pg{padding:44px 0 8px}
+.tile{aspect-ratio:4/3;border:2px dashed var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--soft);font:500 14px "Bricolage Grotesque",Arial,sans-serif}
+.row{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.row b{font:800 20px "Bricolage Grotesque",Arial,sans-serif;color:var(--violet)}
+.row h3{font:800 22px/1.15 "Bricolage Grotesque",Arial,sans-serif;margin:0 0 4px}
+.row p{margin:0 0 6px}.row a{color:var(--blue)}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:start}
+.about img{width:100%;border-radius:6px;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--orange)}
+.btn{display:inline-block;background:var(--orange);color:#1A1433;font:800 16px "Bricolage Grotesque",Arial,sans-serif;padding:12px 22px;border-radius:999px;text-decoration:none;margin:0 10px 10px 0}
+.btn.alt{background:var(--card);color:var(--ink);border:2px solid var(--ink)}
+.todo{font-size:15px;color:var(--soft);border-left:4px solid var(--orange);padding:4px 14px;margin:20px 0}
+@media(max-width:860px){.about{grid-template-columns:1fr}.row{grid-template-columns:1fr;gap:4px}}
+</style></head><body><div class="wrap">
+<header>
+  <h1 class="mark">Ephemera</h1>
+  <p class="tag">For the fashionably inclined.</p>
+  <nav aria-label="Main"><a href="#/home">Outfits</a><a href="#/wardrobe">Wardrobe</a><a href="#/art">Art Projects</a><a href="#/flashbacks">Flashbacks</a><a href="#/stores">Second-hand Stores</a><a href="#/about">About Sheila</a><a href="#/contact">Contact</a></nav>
+</header>
+<main><section data-page="home">
+<div class="hero">
+  <div>
+    <h2>Every piece she owns, and every time she's worn it.</h2>
+    <p>Sheila has listed the brand, source and last wear of every item for years. Now each piece has its own page that keeps count for her.</p>
+    <p>Pick one from her closet.</p>
+    <div class="chips" id="chips" role="group" aria-label="Pick a piece"></div>
+  </div>
+  <div class="piece" aria-live="polite">
+    <img class="thumb" id="thumb" alt="" referrerpolicy="no-referrer" onerror="this.style.display='none'" onload="this.style.display=''"><h3 id="name"></h3>
+    <p class="meta" id="meta"></p>
+    <div class="stats"><div><b id="wears"></b><span>wears</span></div><div><b id="cpw"></b><span>cost per wear</span></div></div>
+    <div class="track" id="track"></div>
+    <div class="yrs"><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
+    <p class="note" id="note"></p>
+  </div>
+</div>
+
+<section class="block">
+  <div class="head"><h2>Latest outfits</h2><a href="#">All outfits</a></div>
+  <div class="grid">
+    <a class="post" href="#"><div class="ph" style="background:#2340D9"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuFIRjKj9ZTLtF55F7e3-Zz19hm8KHVsLSIq5c74LJHAq7OvMFTrn5LLxK9fbAbE_2Oa_dFDbX6kJXM4qnm4Pcfcl5Po827Xvw9n9ErZBFnAc0XoJrCnuedpposDW8BAmDeqpNvuAhmZ0kMmGNkE6fFnyQjTg6C75nMxPty_n2q9WHzhY2dxROTCJikgAP/w614-h640/IMG_2701.JPG" alt="Sheila in a blue dress and Adidas track jacket" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div><h3>Friday Blues and Sleeeeeeves</h3><p>Oct 2 · 4 items tagged, 3 earlier wears linked</p></a>
+    <a class="post" href="#"><div class="ph" style="background:#6B46C1"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPz_QxujSc9uJccocSg8Dy0ZTZQgn95uTFXsJVKCVBS2vTlbQnSLNUECwipT-qeMwC6osdodgarBMIGvjCzLbIRqsmqQxCZ5OMeTyQOGyemHDi-NBh82xCRfa-ccqpPKI-BqJzp7VN854lPhYm4yOyuwjPnvSN1PdetNBDNW8lbypdqlp9lr5MxjCy4ZFj/w334-h640/IMG_2685.JPG" alt="Sheila in a blue and purple Welsh wool cape" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div><h3>Mom-Day in Welsh Wool, and a Lost Scarf</h3><p>Oct 1 · wool cape, 1960s</p></a>
+    <a class="post" href="#"><div class="ph" style="background:#E85A0C"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHa2-ieBUKmDuY9cPiKrUy4ozb-T2jad6DOZ2Y74062YcqpNqVOKXAWaesqjbmjNbGauq7WUVnu5XhgsLRddDvhwPD4zwVqTiWn8P7nIXzLn_5p1DPQsSp1dGWfr31lOBpQy1GExXSCchZTCnSqkiFf77JNewssnMorpEhdAj5zRVojQD-nMqHC5btuOtx/w640-h636/IMG_2661.JPG" alt="Sheila in an orange velour hoodie and satin skirt" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div><h3>Orange Velour and Satin Tiger</h3><p>Sep 29 · 5 items, all worn once before</p></a>
+    <a class="post" href="#"><div class="ph" style="background:#1A1433"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOAwKYr2YAXjs_SlEbkCj9pz8fA2hgtSKWLhPSmBh1ZT3IloUDuuwLU4IW_DYMwj4tYSdhIUPxZH7yra86OkX304c7FZtntD4qM3dEd_c4RB55RRG_9Kqd_qUwoY7eFTSOqmnDEF8XLWf8tDPTgO7fnl8gve988tXZeB757e-cprnipMR-SzGqyu2MD7lB/w608-h640/IMG_2652.JPG" alt="Sheila in a sequined cardigan and tulle skirt" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div><h3>Pop-Art and Tulle</h3><p>Sep 28 · sequined cardigan</p></a>
+  </div>
+</section>
+
+<section class="block">
+  <div class="head"><h2>Browse the closet</h2></div>
+  <div class="browse">
+    <div><h3>By colour</h3><span>Cobalt</span><span>Orange</span><span>Black</span><span>Leopard</span><span>Teal</span></div>
+    <div><h3>By source</h3><span>Thrifted</span><span>Consignment</span><span>Vintage</span><span>Gifts</span><span>Swaps</span></div>
+    <div><h3>By season</h3><span>Fall / Winter</span><span>Spring / Summer</span><span>Rain</span></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="swap">
+    <div><h2>The Fall/Winter Closet Swap-Over</h2><p>Coming this Sunday. Accessories are done, and the clothes and shoes get sorted on Saturday.</p></div>
+    <a href="#">Follow on Substack</a>
+  </div>
+</section>
+</section>
+<section data-page="wardrobe" hidden><div class="pg">
+<div class="head"><h2>The wardrobe</h2></div>
+<p class="lead">Every piece with where it came from and when it was last worn. Filter by source. A full version would keep a wear count and cost per wear for every item automatically.</p>
+<div class="chips" id="wf" role="group" aria-label="Filter by source" style="margin:0 0 24px"></div>
+<div class="grid" id="wg"></div></div></section>
+
+<section data-page="art" hidden><div class="pg">
+<div class="head"><h2>Art projects</h2></div>
+<p class="lead">A gallery for Sheila's art. Each tile opens to the project with photos and notes.</p>
+<div class="grid"><div class="tile">Project photo</div><div class="tile">Project photo</div><div class="tile">Project photo</div><div class="tile">Project photo</div></div>
+<p class="todo">Placeholder. Sheila's real projects and photos go here once she supplies them.</p></div></section>
+
+<section data-page="flashbacks" hidden><div class="pg">
+<div class="head"><h2>Flashbacks</h2></div>
+<p class="lead">Old posts that connect to what she's wearing now. In the full version, each item's page builds this timeline by itself.</p>
+<div class="row"><b>Apr 2022</b><div><h3>The scarf she lost this week</h3><p>She bought it for $79.00 and wore it a lot, until it slipped off her purse on Oct 1, 2026.</p><a href="https://sheilaephemera.blogspot.com/2022/04/bigass-weekend-wrap-up-brocade-and.html">Read the post</a></div></div>
+<div class="row"><b>Oct 2025</b><div><h3>The Welsh wool cape, one year ago</h3><p>Its previous outing, before this week's Mom-Day.</p><a href="https://sheilaephemera.blogspot.com/2025/10/olive-grape-and-cape-and-kittens.html">Read the post</a></div></div>
+<div class="row"><b>Dec 2025</b><div><h3>The sequined cardigan with bold stripes</h3><p>Its last outing before Pop-Art and Tulle.</p><a href="https://sheilaephemera.blogspot.com/2025/12/two-fer-artsy-cardi-and-bold-stripes.html">Read the post</a></div></div>
+<div class="row"><b>Mar 2026</b><div><h3>The Kenzo dress goes shopping</h3><p>One of the nine times she has worn it since buying it for $87.00.</p><a href="https://sheilaephemera.blogspot.com/2026/03/weekend-wrap-up-saturday-tiger-fish.html">Read the post</a></div></div></div></section>
+
+<section data-page="stores" hidden><div class="pg">
+<div class="head"><h2>Favourite second-hand stores</h2></div>
+<p class="lead">Where her pieces come from. Each shop links to everything she has bought there.</p>
+<div class="row"><b>Turnabout</b><div><h3>Consignment</h3><p>Home of the Kenzo x H&amp;M silk dress, $87.00.</p></div></div>
+<div class="row"><b>Botched Consignment</b><div><h3>Consignment</h3><p>Where the Power Blue Adidas Adiracer Lo shoes were waiting in the window, $200.00.</p></div></div>
+<div class="row"><b>WoWo</b><div><h3>Consignment, Vancouver</h3><p>Source of a blouse last seen under a green dress in July.</p></div></div>
+<p class="todo">Placeholder. These three come from recent posts. Sheila's full list and notes go here.</p></div></section>
+
+<section data-page="about" hidden><div class="pg"><div class="about">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuFIRjKj9ZTLtF55F7e3-Zz19hm8KHVsLSIq5c74LJHAq7OvMFTrn5LLxK9fbAbE_2Oa_dFDbX6kJXM4qnm4Pcfcl5Po827Xvw9n9ErZBFnAc0XoJrCnuedpposDW8BAmDeqpNvuAhmZ0kMmGNkE6fFnyQjTg6C75nMxPty_n2q9WHzhY2dxROTCJikgAP/w614-h640/IMG_2701.JPG" alt="Sheila in a blue dress and Adidas track jacket" referrerpolicy="no-referrer" onerror="this.remove()">
+<div><div class="head"><h2>About Sheila</h2></div>
+<p>A 50-something woman who loves fashion, art, books and quirky things. Ephemera is a collection of her daily fashionable outfits, and cat pictures.</p>
+<p>She has been blogging since 2008, mostly in second-hand clothes, and shops her closet more than the shops. Her partner L, her Mom, and two cats, Barnabas and Whateley, show up often.</p>
+<p><a class="btn" href="https://substack.com/@sheilaephemera">Follow on Substack</a></p>
+<p class="todo">Bio is adapted from her blog. Sheila should rewrite it in her own words.</p></div></div></div></section>
+
+<section data-page="contact" hidden><div class="pg">
+<div class="head"><h2>Say hello</h2></div>
+<p class="lead">Comments on the blog are always welcome. For anything else, she'd love to hear from you.</p>
+<a class="btn" href="mailto:hello@example.com">Email Sheila</a><a class="btn alt" href="https://substack.com/@sheilaephemera">Substack</a>
+<p class="todo">The email address is a placeholder.</p></div></section>
+</main>
+<footer><div>Design mockup for Sheila. The layout, colours and wardrobe feature are proposed. Posts, dates, item details and photos come from her blog, and the photos belong to Sheila. Pages marked as placeholders still need her content.</div></footer>
+</div><script>
+var items=[
+{n:"Kenzo x H&M silk dress",m:"2016 collaboration, consignment, bought at Turnabout",img:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgK5uH-paLFW03106YC5PW22L8JI8hVnqxZSz66-B4xu62UpNVmN2J_Qn1z_xhjKpadJGiYP6RpT7L-lDm7jqmA92nSBefN6WP1yJYq0H9YOq2dAcYH9BBuy6q59bCgc9rZ9ZZhlzvDVOqgrL9x-gf3yK884_x6KA7KcEWfOZ6-YQw42NjxxwjpSblf_Hm0/w290-h640/IMG_2627.JPG",w:9,p:87,d:[["Mar 2026",2026.2],["Sep 2026",2026.73]],note:"Bought for $87 about four years ago. It gets an airing roughly every six months."},
+{n:"Welsh wool cape",m:"Coracle Clothes, Wales, vintage 1960s, Sheila's own",img:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPz_QxujSc9uJccocSg8Dy0ZTZQgn95uTFXsJVKCVBS2vTlbQnSLNUECwipT-qeMwC6osdodgarBMIGvjCzLbIRqsmqQxCZ5OMeTyQOGyemHDi-NBh82xCRfa-ccqpPKI-BqJzp7VN854lPhYm4yOyuwjPnvSN1PdetNBDNW8lbypdqlp9lr5MxjCy4ZFj/w334-h640/IMG_2685.JPG",w:2,p:0,d:[["Oct 2025",2025.78],["Oct 2026",2026.78]],note:"Perfect cape weather, as she says. No price on record, so cost per wear isn't tracked."},
+{n:"Adidas Adiracer Lo, Power Blue",m:"Consignment, Botched Consignment",img:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjh7h-bxBfjVoO3ftrZ8um0C71VQAXsXQf2JytudNNYSTDchixGbLzUPVLIjVWFvmZSRO_J1lh_b2HKPBrmoVJTirEWyIg2WEq_vty0T6S7Tpz6ndcWT_l_9PrA58AM8S1tSx_JgVXEwPMtKFEB8pKneK5h3y7B5TUzI0rIysAC5I5ngefaqOv4CCXB6DKA/w640-h602/IMG_2693.JPG",w:1,p:200,d:[["Oct 2026",2026.78]],note:"Bought for $200 and worn the next day. A pair listed online for $597 puts that in perspective."}
+];
+var chips=document.getElementById("chips");
+function show(i){
+  var it=items[i],r=function(id,v){document.getElementById(id).textContent=v};
+  r("name",it.n);var th=document.getElementById("thumb");th.alt=it.n;th.src=it.img;r("meta",it.m);r("wears",it.w);r("note",it.note);
+  r("cpw",it.p?"$"+(it.p/it.w).toFixed(2):"n/a");
+  var t=document.getElementById("track");t.innerHTML="";
+  it.d.forEach(function(x){
+    var pos=((x[1]-2022)/5)*100,d=document.createElement("div");
+    d.className="dot";d.style.left=pos+"%";d.innerHTML="<i>"+x[0]+"</i>";t.appendChild(d)});
+  Array.prototype.forEach.call(chips.children,function(c,j){c.setAttribute("aria-pressed",j===i)});
+}
+items.forEach(function(it,i){
+  var b=document.createElement("button");b.className="chip";b.type="button";b.textContent=it.n.split(",")[0];
+  b.onclick=function(){show(i)};chips.appendChild(b)});
+show(0);
+
+var W=[{"n": "Kenzo x H&M silk dress", "s": "Consignment", "d": "9 wears, $87.00", "i": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgK5uH-paLFW03106YC5PW22L8JI8hVnqxZSz66-B4xu62UpNVmN2J_Qn1z_xhjKpadJGiYP6RpT7L-lDm7jqmA92nSBefN6WP1yJYq0H9YOq2dAcYH9BBuy6q59bCgc9rZ9ZZhlzvDVOqgrL9x-gf3yK884_x6KA7KcEWfOZ6-YQw42NjxxwjpSblf_Hm0/w290-h640/IMG_2627.JPG", "c": "#6B46C1"}, {"n": "Welsh wool cape", "s": "Vintage", "d": "Coracle Clothes, Wales, vintage 60s. Last worn Oct 1, 2026", "i": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPz_QxujSc9uJccocSg8Dy0ZTZQgn95uTFXsJVKCVBS2vTlbQnSLNUECwipT-qeMwC6osdodgarBMIGvjCzLbIRqsmqQxCZ5OMeTyQOGyemHDi-NBh82xCRfa-ccqpPKI-BqJzp7VN854lPhYm4yOyuwjPnvSN1PdetNBDNW8lbypdqlp9lr5MxjCy4ZFj/w334-h640/IMG_2685.JPG", "c": "#2340D9"}, {"n": "Adiracer Lo, Power Blue", "s": "Consignment", "d": "Adidas. Bought Oct 1, 2026, $200.00", "i": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjh7h-bxBfjVoO3ftrZ8um0C71VQAXsXQf2JytudNNYSTDchixGbLzUPVLIjVWFvmZSRO_J1lh_b2HKPBrmoVJTirEWyIg2WEq_vty0T6S7Tpz6ndcWT_l_9PrA58AM8S1tSx_JgVXEwPMtKFEB8pKneK5h3y7B5TUzI0rIysAC5I5ngefaqOv4CCXB6DKA/w640-h602/IMG_2693.JPG", "c": "#2340D9"}, {"n": "Sequined cardigan", "s": "Consignment", "d": "Desigual. Last worn Sep 28, 2026", "i": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOAwKYr2YAXjs_SlEbkCj9pz8fA2hgtSKWLhPSmBh1ZT3IloUDuuwLU4IW_DYMwj4tYSdhIUPxZH7yra86OkX304c7FZtntD4qM3dEd_c4RB55RRG_9Kqd_qUwoY7eFTSOqmnDEF8XLWf8tDPTgO7fnl8gve988tXZeB757e-cprnipMR-SzGqyu2MD7lB/w608-h640/IMG_2652.JPG", "c": "#1A1433"}, {"n": "Velour hoodie", "s": "Thrifted", "d": "Juicy Couture, vintage 90s. Last worn Sep 29, 2026", "i": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHa2-ieBUKmDuY9cPiKrUy4ozb-T2jad6DOZ2Y74062YcqpNqVOKXAWaesqjbmjNbGauq7WUVnu5XhgsLRddDvhwPD4zwVqTiWn8P7nIXzLn_5p1DPQsSp1dGWfr31lOBpQy1GExXSCchZTCnSqkiFf77JNewssnMorpEhdAj5zRVojQD-nMqHC5btuOtx/w640-h636/IMG_2661.JPG", "c": "#E85A0C"}, {"n": "Leather coat", "s": "Thrifted", "d": "Jeno de Paris, vintage 70s. Last worn in the Sep 27 post", "i": "", "c": "#6B46C1"}],wf=document.getElementById("wf"),wg=document.getElementById("wg"),cur="All";
+function draw(){wg.innerHTML="";W.filter(function(x){return cur==="All"||x.s===cur}).forEach(function(x){
+var a=document.createElement("div");a.className="post";
+a.innerHTML='<div class="ph" style="background:'+x.c+'">'+(x.i?'<img src="'+x.i+'" alt="'+x.n+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">':'')+'</div><h3></h3><p></p>';
+a.querySelector("h3").textContent=x.n;a.querySelector("p").textContent=x.s+". "+x.d;wg.appendChild(a)});
+Array.prototype.forEach.call(wf.children,function(c){c.setAttribute("aria-pressed",c.textContent===cur)})}
+["All","Thrifted","Consignment","Vintage"].forEach(function(t){var b=document.createElement("button");b.className="chip";b.type="button";b.textContent=t;b.onclick=function(){cur=t;draw()};wf.appendChild(b)});
+draw();
+function route(){var p=location.hash.replace(/^#\/?/,"")||"home",ok=false,ps=document.querySelectorAll("[data-page]");
+ps.forEach(function(e){if(e.dataset.page===p)ok=true});if(!ok)p="home";
+ps.forEach(function(e){e.hidden=e.dataset.page!==p});
+document.querySelectorAll("nav a").forEach(function(a){if(a.getAttribute("href")==="#/"+p)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+window.scrollTo(0,0)}
+window.addEventListener("hashchange",route);route();
+</script></body></html>
